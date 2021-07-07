@@ -1,95 +1,165 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: '',
-      lastName: '',
+      first_name: '',
+      last_name: '',
       email: '',
       password: '',
-      confirmPassword: ''
-    }
+      confirmPassword:'',
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.showFirstAndLastName = this.showFirstAndLastName.bind(this);
+    this.showConfirmPassword = this.showConfirmPassword.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
+    this.demoUser = this.demoUser.bind(this);
+    this.insertDemoUser = this.insertDemoUser.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.passwordMatch = this.passwordMatch.bind(this);
-    this.loginDemo = this.loginDemo.bind(this);
-  }
 
-  componentWillUnmount() {
-    this.props.clearErrors();
   }
-
-  handleInput(type) {
-    return e => {
-      this.setState({[type]: e.currentTarget.value})
+    ComponentDidMount() {
+      this.props.clearErrors();
     }
-  }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    const user = {
-      first_name: this.state.firstName,
-      last_name: this.state.lastName,
-      email: this.state.email,
-      password: this.state.password
+    handleInput(field) {
+      return e => this.setState({
+        [field]: e.currentTarget.value
+      });
     }
-    if (this.passwordMatch()) this.props.signup(user);
+
+    handleSubmit(e) {
+      e.preventDefault();
+      const user = Object.assign({}, this.state);
+      this.props.processForm(user)
+      // .then(() => { this.props.history.push('/')
+      // });
+    }
+
+    renderErrors() {
+      if (this.props.errors !== undefined) 
+    {return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+        <li key={`error-${i}`}>
+          {error}
+        </li>
+          ))}
+      </ul>
+      )}
   }
 
   passwordMatch() {
     return this.state.password === this.state.confirmPassword
   }
 
-  loginDemo() {
-    this.setState({firstName: "Demo", lastName: "User", email: "demo-user@email.com", password: "password", confirmPassword: "password"})
-    const demo = {email: "demo-user@email.com", password: "password"}
-    this.props.login(demo);
+  showFirstAndLastName() {
+    if (this.props.formType ==='signup') {
+      return (
+      <div>
+        <label>first name
+        <br />
+        <input type="text"
+          value={this.state.first_name}
+          onChange={this.handleInput('first_name')}
+          className='signup-input'
+        />
+      </label>
+      <br />
+      <label>last name
+        <br />
+        <input type="text"
+          value={this.state.last_name}
+          onChange={this.handleInput('last_name')}
+          className='signup-input'
+        />
+        </label>
+      </div>)
+    }
   }
 
-  renderErrors() {
-    return(
-      <ul className="session-error-list">
-        {this.props.errors.map((error,idx) => <li className="session-error" key={`error-${idx}`}>{error}</li>)}
-        {this.passwordMatch() ? "" : <li className="session-error" key="error-confirm">Passwords do not match</li>}
-      </ul>
-    )
+  showConfirmPassword() {
+    if (this.props.formType ==='signup') {
+      return (
+      <div>
+        <label>Re-enter Password
+        <br />
+        <input type="text"
+          value={this.state.confirmPassword}
+          onChange={this.handleInput('confirmPassword')}
+          className='signup-input'
+        />
+        </label>
+      </div>)
+    }
   }
 
-  render() {
-    return(
-      <main className="auth-page">
-        <form onSubmit={this.handleSubmit} className="auth-form">
-          <h1>Create account</h1>
-          <label>First name
-            <input type="text" value={this.state.firstName} onChange={this.handleInput("firstName")} />
-          </label>
-          <label>Last name
-            <input type="text" value={this.state.lastName} onChange={this.handleInput("lastName")} />
-          </label>
-          <label>Email
-            <input type="text" value={this.state.email} onChange={this.handleInput("email")} />
-          </label>
-          <label>Password
-            <input type="password" value={this.state.password} onChange={this.handleInput("password")} />
-          </label>
-          <label>Re-enter password
-            <input type="password" value={this.state.confirmPassword} onChange={this.handleInput("confirmPassword")} />
-          </label>
-          <div className="auth-errors">{this.renderErrors()}</div>
-          <button type="submit" className="submit-button auth-button glow-on-click">Create your Alwayzon account</button>
-          <button type="button" onClick={this.loginDemo} className="submit-button demo-button demo-glow-on-click">Sign-In as demo user</button>
-          <p id="auth-conditions">By creating an account, you agree to Alwayzon's Conditions of Use and Privacy Notice.</p>
-        </form>
-
-        <div className="redirect-to-login">
-          <span>Already have an account?</span>
-          <span><Link className="login-link" to="/login">Sign-In</Link></span>
-        </div>
-      </main>
-    );
+  demoUser(e) {
+    e.preventDefault();
+      const demoAccount = ({
+      email: 'demo-user@email.com',
+      first_name: 'Demo',
+      last_name: "User",
+      password: 'password'
+    });
+    this.props.processForm(demoAccount)
+    // .then(() => this.props.history.push('/home'))
   }
-}
 
+      insertDemoUser () {
+        if (this.props.formType === 'login') {
+          return (
+            <div className='demo-login'>
+              <p className='subtitle-text'>Demo User Login</p>
+              <button className='demo-button' onClick={this.demoUser}></button>
+            </div>
+          )
+        }
+      }
+
+      render() {
+        return (
+          <div className="login-form-container">
+            <form onSubmit={this.handleSubmit} className="login-form-box">
+              <h2 className='title-text'>Welcome back!</h2>
+              <br/>
+              <p className='subtitle-text'>We're so excited to see you again!</p>
+              {this.renderErrors()}
+              <div className="login-form">
+                <br/>
+                {this.showFirstAndLastName()}
+                <br/>
+                <label>email
+                  <br/>
+                  <input type="text"
+                    value={this.state.email}
+                    onChange={this.handleInput('email')}
+                    className="login-input"
+                  />
+                </label>
+                <br/>
+                <label>password
+                <br/>
+                  <input type="password"
+                    value={this.state.password}
+                    onChange={this.handleInput('password')}
+                    className="login-input"
+                  />
+                </label>
+                {this.showConfirmPassword()}
+                <br/>
+                <input className="session-submit" type="submit" value={this.props.formType} />
+                <p>Need an Account? {this.props.navLink}</p> 
+                <br />
+                {this.insertDemoUser()}
+              </div>
+            </form>
+          </div>
+        );
+      }
+    }
+    
 export default SessionForm;
+
