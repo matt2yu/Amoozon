@@ -79,9 +79,9 @@ class SignupForm extends React.Component {
             <input type="password" value={this.state.confirmPassword} onChange={this.handleInput("confirmPassword")} />
           </label>
           <div className="auth-errors">{this.renderErrors()}</div>
-          <button type="submit" className="submit-button auth-button glow-on-click">Create your Alwayzon account</button>
+          <button type="submit" className="submit-button auth-button glow-on-click">Create your Amoozon account</button>
           <button type="button" onClick={this.loginDemo} className="submit-button demo-button demo-glow-on-click">Sign-In as demo user</button>
-          <p id="auth-conditions">By creating an account, you agree to Alwayzon's Conditions of Use and Privacy Notice.</p>
+          <p id="auth-conditions">By creating an account, you agree to Amoozon's Conditions of Use and Privacy Notice.</p>
         </form>
 
         <div className="redirect-to-login">

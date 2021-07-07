@@ -61,7 +61,7 @@ class LoginForm extends React.Component {
         </form>
 
         <div className="login-to-signup">
-          <h3><span>New to Alwayzon?</span></h3>
+          <h3><span>New to Amoozon?</span></h3>
           <Link to="/signup">
             <button type="button" className="redirect-signup glow-on-click">Create your Amoozon account</button>
           </Link>
