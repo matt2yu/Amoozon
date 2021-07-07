@@ -66,5 +66,7 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 
+# Ignore locks
 Gemfile.lock
+package-lock.json
 
