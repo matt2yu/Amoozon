@@ -10,7 +10,7 @@ const App = () => (
     <Switch>
       <Route path="/signup"><AuthRoute path="/signup" component={SignupFormContainer} /></Route>
       <Route path="/login"><AuthRoute path="/login" component={LoginFormContainer} /></Route>
-      <Route path="/"><SplashContainer /></Route>
+      {/* <Route path="/"><SplashContainer /></Route> */}
     </Switch>
   </div>
 );
