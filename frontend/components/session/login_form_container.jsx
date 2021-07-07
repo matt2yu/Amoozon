@@ -1,14 +1,21 @@
 import { connect } from 'react-redux';
-import LoginForm from './login_form';
-import { login, clearErrors } from '../../actions/session_actions';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { login } from '../../actions/session_actions';
+import SessionForm from './session_form';
 
-const mapState = ({errors}) => ({
-  errors: errors.login
-});
+const mapStateToProps = ( {errors} ) => {
+  return {
+    errors: errors.session,
+    formType: 'login',
+    navLink: <Link to="/signup">Register</Link>,
+  };
+};
 
-const mapDispatch = dispatch => ({
-  login: (user) => dispatch(login(user)),
-  clearErrors: () => dispatch(clearErrors())
-});
+const mapDispatchToProps = dispatch => {
+  return {
+    processForm: (user) => dispatch(login(user)),
+  };
+};
 
-export default connect(mapState, mapDispatch)(LoginForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
