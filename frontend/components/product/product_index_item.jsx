@@ -16,10 +16,10 @@ const ProductIndexItem = props => {
         <h2>{props.product.name}</h2>
       </Link>
 
-      <div className="rating-index">{props.product.averageRating ? (
+      <div className="rating-index">{props.product.average_rating ? (
         <div className="star-ratings-css-index">
           <div className="star-ratings-css-index-top" 
-            style={{width: `${parseFloat(props.product.averageRating).toFixed(1)}em`}}>
+            style={{width: `${parseFloat(props.product.average_rating).toFixed(1)}em`}}>
             <span>★</span>
             <span>★</span>
             <span>★</span>
@@ -33,7 +33,7 @@ const ProductIndexItem = props => {
             <span>★</span>
             <span>★</span>
           </div>
-        </div>) : 'No reviews yet'}
+        </div>) : 'No working yet'}
       </div>
 
         <h2 className="price">${parseFloat(props.product.price).toFixed(2)}</h2>

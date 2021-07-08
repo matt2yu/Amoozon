@@ -12,12 +12,12 @@ const mapState = (state, { match }) => {
     product,
     reviews,
     users: state.entities.users,
-    userId: state.session.id
+    user_id: state.session.id
   };
 };
 
 const mapDispatch = dispatch => ({
-  fetchProduct: productId => dispatch(fetchProduct(productId))
+  fetchProduct: productId => dispatch(fetchProduct(productId)),
 });
 
 export default withRouter(connect(mapState, mapDispatch)(ProductShow));

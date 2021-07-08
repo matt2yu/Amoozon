@@ -8,7 +8,6 @@
   margin: 7em;
   padding-bottom: 3em;
   .no-results {
-    // font-family: $default-font;
     margin: 3em;
   }
   .product-index-item {
@@ -18,10 +17,8 @@
     text-decoration: none;
     padding: 2.5em 2em 3em 2em;
     border-bottom: 2px solid lightgrey;
-    // font-family: $default-font;
     .product-item {
       text-decoration: none;
-      // color: $almost-black;
       font-size: 1.2em;
       letter-spacing: 0.1em;
       margin-bottom: 2em;
@@ -41,7 +38,6 @@
 
 .shipping-info {
   font-size: 0.8em;
-  // color: $medium-gray;
   letter-spacing: 0.05em;
   line-height: 1.3em;
   margin-top: 1.5em;
@@ -54,39 +50,39 @@
   margin-right: 0.3em;
 }
 
-// .star-ratings-css-index {
-//   unicode-bidi: bidi-override;
-//   color: #c5c5c5;
-//   font-size: 1.5em;
-//   height: 25px;
-//   width: 100px;
-//   margin: 0;
-//   margin-bottom: 0.5em;
-//   position: relative;
+.star-ratings-css-index {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 1.5em;
+  height: 25px;
+  width: 100px;
+  margin: 0;
+  margin-bottom: 0.5em;
+  position: relative;
   
-//   padding: 0;
-//   text-shadow: 0px 1px 0 #a2a2a2;
+  padding: 0;
+  text-shadow: 0px 1px 0 #a2a2a2;
   
-//   &-top {
-//     color: #e7711b;
-//     padding: 0;
-//     position: absolute;
-//     z-index: 1;
-//     display: block;
-//     top: 0;
-//     left: 0;
-//     overflow: hidden;
-//     width: 3.5em;
-//   }
-//   &-bottom {
-//     padding: 0;
-//     display: block;
-//     z-index: 0;
-//   }
-// }
+  &-top {
+    color: #e7711b;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 3.5em;
+  }
+  &-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+  }
+}
 
-// .rating-index {
-//   font-size: 0.9em;
-//   color: gray;
-//   margin-bottom: 1em;
-// }
+.rating-index {
+  font-size: 0.9em;
+  color: gray;
+  margin-bottom: 1em;
+}

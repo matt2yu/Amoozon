@@ -21,10 +21,10 @@ export const clearProducts = () => ({
   type: CLEAR_PRODUCTS
 });
 
-export const receiveReview = ({review, averageRating, user}) => ({
+export const receiveReview = ({review, average_rating, user}) => ({
   type: RECEIVE_REVIEW,
   review,
-  averageRating,
+  average_rating,
   user
 });
 
