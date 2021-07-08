@@ -48,7 +48,7 @@ class CartIndex extends React.Component {
 
   render() {
     if (this.state.loaded) {
-      let cartItems = this.props.cartItems.map((cartItem, idx) => <CartIndexItem key={`cartItem-${idx}`} cartItem={cartItem} product={this.props.products[cartItem.product_id]} fetchCart = {this.props.fetchCart} deleteCartItem={this.props.deleteCartItem} updateCartItem={this.props.updateCartItem}/>)
+      let cartItems = this.props.cartItems.map((cartItem, i) => <CartIndexItem key={`cartItem-${i}`} cartItem={cartItem} product={this.props.products[cartItem.product_id]} fetchCart = {this.props.fetchCart} deleteCartItem={this.props.deleteCartItem} updateCartItem={this.props.updateCartItem}/>)
       if (cartItems.length === 0) {
         return(this.emptyCart())
       } else {

@@ -13,7 +13,6 @@ const Cart = (props) => {
 
   const loggedOut = () => (
     <Link to="/login" className="cart bold">
-      <CgShoppingCart className="cart-icon" />
       <span>&nbsp;Cart</span>
     </Link>
   );

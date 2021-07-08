@@ -20,13 +20,13 @@ class ProductShow extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.props.match.params.product_id !== nextProps.match.params.productId) {
+    if(this.props.match.params.productId !== nextProps.match.params.productId) {
         this.props.fetchProduct(nextProps.match.params.productId);
     }
   }
   
   addToCart() {
-    this.props.createCartItem({ user_id: this.props.userId, product_id: this.props.product.id, quantity: 1}).then(()=>this.setState({showFeedback: true}));
+    this.props.createCartItem({ user_id: this.props.user_id, product_id: this.props.product.id, quantity: 1}).then(()=>this.setState({showFeedback: true}));
   }
   
   successfulAddToCart() {

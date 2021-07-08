@@ -9,15 +9,15 @@ const productsReducer = (state={}, action) => {
     case RECEIVE_PRODUCTS:
       return action.products;
     case RECEIVE_REVIEW:
-      const newState = Object.assign({}, state);
       const { review, average_rating } = action;
+      const newState = Object.assign({}, state);
       newState[review.product_id].reviewIds.push(review.id);
       newState[review.product_id].average_rating = average_rating;
       return newState;
-    case CLEAR_PRODUCTS:
-      return {};
     case RECEIVE_CART_ITEMS:
       return Object.assign({}, state, action.products);
+    case CLEAR_PRODUCTS:
+      return {};
     default:
       return state;
   }
