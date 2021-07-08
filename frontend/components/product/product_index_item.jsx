@@ -33,7 +33,7 @@ const ProductIndexItem = props => {
             <span>★</span>
             <span>★</span>
           </div>
-        </div>) : 'No Reviews yet'}
+        </div>) : 'No reviews yet'}
       </div>
 
         <h2 className="price">${parseFloat(props.product.price).toFixed(2)}</h2>

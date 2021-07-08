@@ -8,9 +8,9 @@ class ReviewForm extends React.Component {
       complete: false,
       userId: this.props.userId,
       productId: parseInt(this.props.match.params.productId),
+      rating: '',
       title: '',
-      body: '',
-      rating: ''
+      body: ''
     }
     this.formComplete = this.formComplete.bind(this);
     this.handleInput = this.handleInput.bind(this);
