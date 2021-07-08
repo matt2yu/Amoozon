@@ -28,36 +28,39 @@ class ProductShow extends React.Component {
     const { product } = this.props;
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    
     let slowDelivery = new Date();
     slowDelivery.setDate(slowDelivery.getDate() + 7);
     let slowDay = days[slowDelivery.getDay()];
     let slowMonth = months[slowDelivery.getMonth()];
     let slowDate = slowDelivery.getDate();
+
     let fastDelivery = new Date();
     fastDelivery.setDate(fastDelivery.getDate() + 2);
     let fastDay = days[fastDelivery.getDay()];
     let fastMonth = months[fastDelivery.getMonth()];
     let fastDate = fastDelivery.getDate();
 
-    const now = new Date();
-    const midnight = new Date(now);
+    const currentTime = new Date();
+    const midnight = new Date(currentTime);
     midnight.setHours(24, 0, 0, 0);
-    const hoursTilMidnight = Math.floor((midnight.getTime()-now.getTime())/3600/1000);
-    const minutesTilMidnight = Math.floor((midnight.getTime()-now.getTime())/60/1000 - (60 * hoursTilMidnight));
+    const hoursTilMidnight = Math.floor((midnight.getTime()-currentTime.getTime())/3600/1000);
+    const minutesTilMidnight = Math.floor((midnight.getTime()-currentTime.getTime())/60/1000 - (60 * hoursTilMidnight));
 
     return(
       <div className="product-show-page">
         <main className="product-info">
+
           <img src={product.imageUrl} alt={product.name} />
           <section>
             <h1>{product.name}</h1>
-          
             <hr />
             <div>Price: <span className="product-price">${parseFloat(product.price).toFixed(2)}</span> & FREE Returns</div>
             <hr />
             <h3 className="bold">About this item</h3>
             <li>{product.description}</li>
           </section>
+
           <aside>
             <h3><span className="product-price">${parseFloat(product.price).toFixed(2)}</span></h3>
             <div>& FREE Returns</div>
@@ -77,6 +80,7 @@ class ProductShow extends React.Component {
             </div>
             <p>Return policy: This item is returnable</p>
           </aside>
+
         </main>
       </div>
     )
