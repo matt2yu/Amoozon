@@ -57,10 +57,23 @@ class ProductShow extends React.Component {
           {/* <img src={product.imageUrl} alt={product.name} /> */}
           <section>
             <h1>{product.name}</h1>
-            <div>{product.averageRating ? (
+            <div>{product.average_rating ? (
               <div className="star-ratings-css-product">
-                <div className="star-ratings-css-product-top" style={{width: `${parseFloat(product.averageRating).toFixed(1)}em`}}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-                <div className="star-ratings-css-product-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <div className="star-ratings-css-product-top" 
+                  style={{width: `${parseFloat(product.average_rating).toFixed(1)}em`}}>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+                <div className="star-ratings-css-product-bottom">
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
               </div>) : 'No Reviews yet'}
             </div>
             <span className="rating-count">{this.props.reviews.length} {this.props.reviews.length === 1 ? "rating" : "ratings"}</span>
@@ -95,10 +108,16 @@ class ProductShow extends React.Component {
         <section className="reviews">
           <section className="review-ratings">
             <h2>Customer reviews</h2><br></br>
-            <div>{product.averageRating ? (
+            <div>{product.average_rating ? (
             <div className="star-ratings-css-review">
-              <div className="star-ratings-css-review-top" style={{width: `${parseFloat(product.averageRating).toFixed(1)}em`}}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-              <div className="star-ratings-css-review-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              <div className="star-ratings-css-review-top" style={{width: `${parseFloat(product.average_rating).toFixed(1)}em`}}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              <div className="star-ratings-css-review-bottom">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                </div>
             </div>) : 'No Reviews yet'}</div>
             <p className="gray">{reviews.length} global {reviews.length === 1 ? "rating" : "ratings"}</p>
             <hr />
