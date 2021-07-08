@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ProductShow from './product_show';
 import { fetchProduct } from '../../actions/product_actions';
-import { selectProduct, selectReviewsForProduct } from '../../reducers/selectors';
+import { selectReviewsForProduct, selectProduct } from '../../reducers/selectors';
 import { withRouter } from 'react-router-dom';
 
 const mapState = (state, { match }) => {
@@ -17,7 +17,7 @@ const mapState = (state, { match }) => {
 };
 
 const mapDispatch = dispatch => ({
-  fetchProduct: productId => dispatch(fetchProduct(productId)),
+  fetchProduct: productId => dispatch(fetchProduct(productId))
 });
 
 export default withRouter(connect(mapState, mapDispatch)(ProductShow));

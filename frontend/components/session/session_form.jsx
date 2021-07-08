@@ -86,7 +86,7 @@ class SessionForm extends React.Component {
       <div>
         <label>Re-enter Password
         <br />
-        <input type="text"
+        <input type="password"
           value={this.state.confirmPassword}
           onChange={this.handleInput('confirmPassword')}
           className='signup-input'
