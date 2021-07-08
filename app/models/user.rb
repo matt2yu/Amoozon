@@ -8,6 +8,10 @@ class User < ApplicationRecord
   attr_reader :password
 
   has_many :reviews
+  has_many :cart_items
+  has_many :products,
+    through: :cart_items,
+    source: :products
 
 
   def self.find_by_credentials(email, password)
