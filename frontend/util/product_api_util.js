@@ -1,3 +1,11 @@
+export const saveReview = review => (
+  $.ajax({
+    method: "POST",
+    url: "/api/reviews",
+    data: { review }
+  })
+);
+
 export const getProduct = productId => (
   $.ajax({
     method: 'GET',
@@ -9,13 +17,5 @@ export const getProducts = (search, category) => (
   $.ajax({
     method: 'GET',
     url: `/api/products?search=${search}&category=${category}`
-  })
-);
-
-export const saveReview = review => (
-  $.ajax({
-    method: "POST",
-    url: "/api/reviews",
-    data: { review }
   })
 );
