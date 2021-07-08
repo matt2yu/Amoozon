@@ -30,6 +30,10 @@
     "start": "webpack --watch --mode=development",
     "postinstall": "webpack"
   },
+  "engines": {
+    "node": "10.17.0",
+    "npm": "6.4.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/matt2yu/Amoozon.git"

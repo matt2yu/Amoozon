@@ -1,12 +1,10 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import Searchbar from './searchbar';
 import { fetchProducts } from '../../actions/product_actions';
-import Splash from './splash';
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatch = dispatch => ({
   fetchProducts: (search, category) => dispatch(fetchProducts(search, category))
 });
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(Splash);
+export default withRouter(connect(null, mapDispatch)(Searchbar));

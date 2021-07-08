@@ -1,0 +1,29 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const ProductIndexItem = props => {
+  const days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  let fastDelivery = new Date();
+  fastDelivery.setDate(fastDelivery.getDate() + 2);
+  let fastDay = days[fastDelivery.getDay()];
+  let fastMonth = months[fastDelivery.getMonth()];
+  let fastDate = fastDelivery.getDate();
+  return(
+    <li className="product-index-item">
+      <Link className="product-item" to={`/products/${props.product.id}`}>
+        {/* <img src={props.product.imageUrl} alt={props.product.name} width="100px" height="100px"/> */}
+        <h2>{props.product.name}</h2>
+      </Link>
+        <h2 className="price">${parseFloat(props.product.price).toFixed(2)}</h2>
+        <p className="shipping-info">
+          <img id="time-logo" src={window.time} alt="time logo" />
+          Get it as soon as <span className="bold">{`${fastDay}, ${fastMonth} ${fastDate}`}</span>
+          <br></br>
+          FREE Prime shipping by Amoozon
+        </p>
+    </li>
+  )
+}
+
+export default ProductIndexItem;

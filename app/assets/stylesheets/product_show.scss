@@ -1,0 +1,234 @@
+.product-show-page {
+  margin: 4em 8em 4em 8em;
+  // font-family: $default-font;
+  // color: $dark-gray;
+  h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+  .product-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    img {
+      max-width: 22rem;
+      max-height: 22rem;
+      width: auto;
+      height: auto;
+    }
+  }
+  h3 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  section {
+    flex-grow: 0.7;
+    margin-left: 2em;
+    margin-right: 2em;
+    line-height: 1.4em;
+  }
+}
+
+aside {
+  border: 1px solid lightgrey;
+  padding: 1em;
+}
+
+.product-price {
+  color: darkred;
+  font-size: 1.2em;
+}
+
+.in-stock {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: green;
+  font-size: 1.3em;
+}
+
+.add-to-cart {
+  display: inline-block;
+  background: linear-gradient(#ffe07d, #ffd95e);
+  padding: 0.7em;
+  border-radius: 1em;
+  text-align: center;
+  width: 14em;
+  font-size: 0.9em;
+  margin: 2px;
+  margin-bottom: 5px;
+    &:hover {
+      background: linear-gradient(#ffdd6e, #ffc400);
+      cursor: pointer;
+    }
+}
+
+.shipped-by {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.gray {
+  color: gray;
+}
+
+.line-height {
+  line-height: 1.5em;
+}
+
+// // Reviews
+
+// .reviews {
+//   margin-top: 3em;
+//   padding-top: 3em;
+//   border-top: 0.05em solid lightgrey;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   h2 {
+//     font-weight: bold;
+//     font-size: 1.5em;
+//   }
+//   h3 {
+//     font-weight: bold;
+//     font-size: 1.1em;
+//     margin-bottom: 1.5em;
+//   }
+//   .review-ratings {
+//     flex-grow: 0.1;
+//     margin-right: 3em;
+//   }
+// }
+
+// .write-review {
+//   margin: 2em;
+//   font-size: 0.8rem;
+//   width: 18rem;
+//   padding: 0.45rem;
+//   border: 1px solid lightgrey;
+//   border-radius: 0.7em;
+//   background-color: white;
+//   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2);
+//   &:hover {
+//     cursor: pointer;
+//     background: linear-gradient(#f2f2f2, #e5e5e5);
+//   }
+// }
+
+// .review-title {
+//   font-weight: bold;
+//   margin-top: 0.8em;
+//   margin-bottom: 0.8em;
+// }
+
+// .review-rating {
+//   font-size: 0.9em;
+//   color: gray;
+// }
+
+// .review-body {
+//   margin-top: 0.8em;
+//   margin-bottom: 2em;
+// }
+
+// .cart-confirmation {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   border: 1px solid lightgrey;
+//   margin-bottom: 2em;
+//   margin-top: -3em;
+//   background: #f6f6f6;
+//   border-radius: 0.5em;
+//   img {
+//     max-width: 3em;
+//     width: auto;
+//     height: auto;
+//     border: 2px solid #00b300;
+//     margin-right: 1.5em;
+//     margin-left: 2em
+//   }
+//   h3 {
+//     color: #00b300;
+//     font-weight: bold;
+//   }
+// }
+
+// .continue-shopping {
+//   margin-left: 10em;
+//   border-radius: 0.5em;
+//   padding: 1em;
+// }
+
+// .view-cart {
+//   text-decoration: none;
+//   border-radius: 0.5em;
+//   border: 1px solid lightgrey;
+//   padding: 1em;
+// }
+
+// .star-ratings-css-product {
+//   unicode-bidi: bidi-override;
+//   color: #c5c5c5;
+//   font-size: 25px;
+//   height: 25px;
+//   width: 100px;
+//   margin: 0;
+//   position: relative;
+  
+//   padding: 0;
+//   text-shadow: 0px 1px 0 #a2a2a2;
+  
+//   &-top {
+//     color: #e7711b;
+//     padding: 0;
+//     position: absolute;
+//     z-index: 1;
+//     display: block;
+//     top: 0;
+//     left: 0;
+//     overflow: hidden;
+//     width: 3.5em;
+//   }
+//   &-bottom {
+//     padding: 0;
+//     display: block;
+//     z-index: 0;
+//   }
+// }
+
+// .star-ratings-css-review {
+//   unicode-bidi: bidi-override;
+//   color: #c5c5c5;
+//   font-size: 25px;
+//   height: 25px;
+//   width: 100px;
+//   margin: 0;
+//   margin-bottom: 0.5em;
+//   position: relative;
+  
+//   padding: 0;
+//   text-shadow: 0px 1px 0 #a2a2a2;
+  
+//   &-top {
+//     color: #e7711b;
+//     padding: 0;
+//     position: absolute;
+//     z-index: 1;
+//     display: block;
+//     top: 0;
+//     left: 0;
+//     overflow: hidden;
+//     width: 3.5em;
+//   }
+//   &-bottom {
+//     padding: 0;
+//     display: block;
+//     z-index: 0;
+//   }
+// }
+
+// .rating-count {
+//   position: relative;
+//   left: 10em;
+//   bottom: 1.2em;
+// }
