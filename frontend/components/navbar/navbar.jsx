@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchbarContainer from './searchbar_container'
 import SessionStatusContainer from './session_status_container';
-
+import CartContainer from './cart_container';
 
 const Navbar = () => {
   return(
@@ -9,6 +9,7 @@ const Navbar = () => {
       <nav className="navbar">
         <SearchbarContainer/>
         <SessionStatusContainer />
+        <CartContainer />
       </nav>
     </div>
   )

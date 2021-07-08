@@ -1,4 +1,5 @@
 import { RECEIVE_PRODUCT, RECEIVE_PRODUCTS, RECEIVE_REVIEW, CLEAR_PRODUCTS } from '../../actions/product_actions';
+import { RECEIVE_CART_ITEMS } from '../../actions/cart_actions';
 
 const productsReducer = (state={}, action) => {
   Object.freeze(state);
@@ -15,6 +16,8 @@ const productsReducer = (state={}, action) => {
       return newState;
     case CLEAR_PRODUCTS:
       return {};
+    case RECEIVE_CART_ITEMS:
+      return Object.assign({}, state, action.products);
     default:
       return state;
   }
