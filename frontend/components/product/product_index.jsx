@@ -2,7 +2,7 @@ import React from 'react';
 import ProductIndexItem from './product_index_item';
 import queryString from 'query-string';
 import { Link } from 'react-router-dom';
-import Spinner from '../home/spinner';
+import Loading from '../home/loading';
 
 class ProductIndex extends React.Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class ProductIndex extends React.Component {
 
   render() {
     if (this.state.loading) {
-      return <Spinner />
+      return <Loading />
     }
     let products = this.props.products.map((product, i) => <ProductIndexItem product={product} key={`product-${i}`} />)
     return(

@@ -11,3 +11,11 @@ export const getProducts = (search, category) => (
     url: `/api/products?search=${search}&category=${category}`
   })
 );
+
+export const saveReview = review => (
+  $.ajax({
+    method: "POST",
+    url: "/api/reviews",
+    data: { review }
+  })
+);

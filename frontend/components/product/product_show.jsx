@@ -1,13 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Link } from 'react-router-dom';
-import { FcCheckmark } from 'react-icons/fc';
+import ReviewIndexItem from './review_index_item';
+// import { FcCheckmark } from 'react-icons/fc';
 
 class ProductShow extends React.Component {
   constructor(props) {
     super(props);
     this.state={
-
+      showFeedback: false
     };
 
 
@@ -25,9 +26,11 @@ class ProductShow extends React.Component {
 
 
   render() {
-    const { product } = this.props;
+    const { product, reviews, users } = this.props;
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    
+    let allReviews = reviews.map((review, i) => <ReviewIndexItem user={users[review.userId]} review={review} key={`review-${i}`} />);
     
     let slowDelivery = new Date();
     slowDelivery.setDate(slowDelivery.getDate() + 7);
@@ -51,9 +54,16 @@ class ProductShow extends React.Component {
       <div className="product-show-page">
         <main className="product-info">
 
-          <img src={product.imageUrl} alt={product.name} />
+          {/* <img src={product.imageUrl} alt={product.name} /> */}
           <section>
             <h1>{product.name}</h1>
+            <div>{product.averageRating ? (
+              <div className="star-ratings-css-product">
+                <div className="star-ratings-css-product-top" style={{width: `${parseFloat(product.averageRating).toFixed(1)}em`}}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <div className="star-ratings-css-product-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              </div>) : 'No Reviews yet'}
+            </div>
+            <span className="rating-count">{this.props.reviews.length} {this.props.reviews.length === 1 ? "rating" : "ratings"}</span>
             <hr />
             <div>Price: <span className="product-price">${parseFloat(product.price).toFixed(2)}</span> & FREE Returns</div>
             <hr />
@@ -82,6 +92,30 @@ class ProductShow extends React.Component {
           </aside>
 
         </main>
+        <section className="reviews">
+          <section className="review-ratings">
+            <h2>Customer reviews</h2><br></br>
+            <div>{product.averageRating ? (
+            <div className="star-ratings-css-review">
+              <div className="star-ratings-css-review-top" style={{width: `${parseFloat(product.averageRating).toFixed(1)}em`}}><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              <div className="star-ratings-css-review-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            </div>) : 'No Reviews yet'}</div>
+            <p className="gray">{reviews.length} global {reviews.length === 1 ? "rating" : "ratings"}</p>
+            <hr />
+            <h3>Review this product</h3>
+            <p>Share your thoughts with other customers</p>
+            <Link to={`/products/${product.id}/review`}>
+              <button type="button" className="write-review glow-on-click">Write a customer review</button>
+            </Link>
+            <hr></hr>
+          </section>
+          <section className="review-details">
+            <h3>Top reviews from the United States</h3>
+            <ul>
+              {allReviews.length === 0 ? <li>There are no customer reviews yet.</li> : allReviews }
+            </ul>
+          </section>
+        </section>
       </div>
     )
   };
