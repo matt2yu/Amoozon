@@ -1,3 +1,2 @@
 # Amoozon
-
-(updates pending)
+(to be completed)
