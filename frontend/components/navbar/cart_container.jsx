@@ -3,7 +3,7 @@ import Cart from './cart';
 
 const mapState = ({entities, session}) => ({
   currentUser: entities.users[session.id],
-  cartItems: Object.values(entities.cartItems)
+  cart_items: Object.values(entities.cartItems)
 });
 
 export default connect(mapState)(Cart);

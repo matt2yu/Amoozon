@@ -6,7 +6,7 @@ class CartIndexItem extends React.Component {
     super(props);
     this.state = {
       id: this.props.cartItem.id,
-      user_id: this.props.cartItem.userId,
+      user_id: this.props.cartItem.user_id,
       product_id: this.props.product.id,
       quantity: this.props.cartItem.quantity
     };

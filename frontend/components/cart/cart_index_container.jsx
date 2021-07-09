@@ -3,7 +3,7 @@ import CartIndex from './cart_index';
 import { fetchCart, deleteCartItem, updateCartItem } from '../../actions/cart_actions';
 
 const mapState = ({entities}) => ({
-  cartItems: Object.values(entities.cartItems),
+  cart_items: Object.values(entities.cart_items),
   products: entities.products
 });
 
