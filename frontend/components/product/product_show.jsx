@@ -2,7 +2,6 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Link } from 'react-router-dom';
 import ReviewIndexItem from './review_index_item';
-// import { FcCheckmark } from 'react-icons/fc';
 
 class ProductShow extends React.Component {
   constructor(props) {
@@ -10,6 +9,8 @@ class ProductShow extends React.Component {
     this.state={
       showFeedback: false
     };
+    this.addToCart = this.addToCart.bind(this);
+    this.successfulAddToCart = this.successfulAddToCart.bind(this);
 
 
   }
@@ -21,6 +22,24 @@ class ProductShow extends React.Component {
   componentWillReceiveProps(nextProps) {
     if(this.props.match.params.productId !== nextProps.match.params.productId) {
         this.props.fetchProduct(nextProps.match.params.productId);
+    }
+  }
+  
+  addToCart() {
+    this.props.createCartItem({ user_id: this.props.user_id, product_id: this.props.product.id, quantity: 1}).then(()=>this.setState({showFeedback: true}));
+  }
+  
+  successfulAddToCart() {
+    if (!this.state.showFeedback) {
+      return null;
+    } else {
+      return(
+        <div className="cart-confirmation">
+          <h3>Added to Cart</h3>
+          <button className="write-review continue-shopping" onClick={()=>this.setState({showFeedback: false})}>Continue Shopping</button>
+          <Link className="add-to-cart view-cart" to="/cart">View Cart</Link>
+        </div>
+      )
     }
   }
 
@@ -52,9 +71,8 @@ class ProductShow extends React.Component {
 
     return(
       <div className="product-show-page">
+        {this.successfulAddToCart()}
         <main className="product-info">
-
-          {/* <img src={product.imageUrl} alt={product.name} /> */}
           <section>
             <h1>{product.name}</h1>
             <div>{product.average_rating ? (
@@ -97,11 +115,11 @@ class ProductShow extends React.Component {
               </div>
             </div>
             <p className="in-stock">In Stock.</p>
+            <button onClick={()=>this.addToCart()} className="add-to-cart">Add to Cart</button>
             <div className="shipped-by line-height">
               <div><span className="gray">Ships from</span> &nbsp;&nbsp;Amoozon.com</div>
               <div><span className="gray">Sold by</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amoozon.com</div>
             </div>
-            <p>Return policy: This item is returnable</p>
           </aside>
 
         </main>
