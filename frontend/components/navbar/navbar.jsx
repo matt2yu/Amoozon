@@ -2,6 +2,9 @@ import React from 'react';
 import SearchbarContainer from './searchbar_container'
 import SessionStatusContainer from './session_status_container';
 import CartContainer from './cart_container';
+import DeliverTo from './deliver_to';
+import Flag from './flag';
+import Returns from './returns';
 
 const Navbar = () => {
   return(
@@ -9,6 +12,9 @@ const Navbar = () => {
       <nav className="navbar">
         <SearchbarContainer/>
         <SessionStatusContainer />
+        <DeliverTo />
+        <Flag />
+        <Returns />
         <CartContainer />
       </nav>
     </div>
