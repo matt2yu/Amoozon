@@ -8,12 +8,12 @@ const Splash = props => {
       {/* <img className="" src={window.splash} alt="splash page background" /> */}
     </div>
     <section className="cards">
-      <Link className="card" onClick={() => props.fetchProducts('', 'Anime')} to="/products?search=&category=Anime">
-        <h2>Anime</h2>
+      <Link className="card" onClick={() => props.fetchProducts('', 'Electronics')} to="/products?search=&category=Electronics">
+        <h2>Electronics</h2>
       </Link>
-      <Link className="card" onClick={() => props.fetchProducts('', 'Manga')} to="/products?search=&category=Manga">
+      {/* <Link className="card" onClick={() => props.fetchProducts('', 'Manga')} to="/products?search=&category=Manga">
         <h2>Manga</h2>
-      </Link>
+      </Link> */}
       <a className="back-to-top" href="#">Back to top</a>
     </section>
   </div>

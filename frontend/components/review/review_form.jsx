@@ -57,7 +57,7 @@ class ReviewForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="review-form">
           <h2>Create Review</h2>
           <div className="review-product">
-            {/* <img src={this.props.product.imageUrl} alt={this.props.product.name} /> */}
+            <img src={this.props.product.imageUrl} alt={this.props.product.name} />
             <p>{this.props.product.name}</p>
           </div>
           <div className="review-stars">
