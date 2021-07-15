@@ -35,6 +35,8 @@ class ProductShow extends React.Component {
     } else {
       return(
         <div className="cart-confirmation">
+        <img src={this.props.product.imageUrl} alt={this.props.product.name} />
+
           <h3>Added to Cart</h3>
           <button className="write-review continue-shopping" onClick={()=>this.setState({showFeedback: false})}>Continue Shopping</button>
           <Link className="add-to-cart view-cart" to="/cart">View Cart</Link>
@@ -73,6 +75,7 @@ class ProductShow extends React.Component {
       <div className="product-show-page">
         {this.successfulAddToCart()}
         <main className="product-info">
+        <img src={product.imageUrl} alt={product.name} />
           <section>
             <h1>{product.name}</h1>
             <div>{product.average_rating ? (
