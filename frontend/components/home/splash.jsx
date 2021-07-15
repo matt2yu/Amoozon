@@ -5,7 +5,7 @@ const Splash = props => {
   return(
   <div className="splash-page">
     <div className="amoozon-banner">
-      <img className="" src={window.splash} alt="splash page background" />
+      <img className="" src={window.splashbg} alt="splash page background" />
     </div>
     <section className="cards">
       <Link className="card" onClick={() => props.fetchProducts('', 'Electronics')} to="/products?search=&category=Electronics">
