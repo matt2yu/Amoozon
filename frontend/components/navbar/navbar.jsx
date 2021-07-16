@@ -6,11 +6,13 @@ import DeliverTo from './deliver_to';
 import Flag from './flag';
 import Returns from './returns';
 import CategoryNavbarContainer from './category_navbar_container';
+import { DarkLogo } from './logo';
 
 const Navbar = () => {
   return(
     <div>
       <nav className="navbar">
+        <DarkLogo />
         <SearchbarContainer/>
         <SessionStatusContainer />
         <DeliverTo />

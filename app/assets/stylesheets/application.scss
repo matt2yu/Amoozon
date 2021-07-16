@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+@import "reset.scss";
+
+$almost-black: #131921;
+$dark-gray: #444444;
+$medium-gray: #555555;
+$default-font: Arial, Helvetica, sans-serif;
+
+@import "cart.scss";
+@import "login.scss";
+@import "navbar.scss";
+@import "product_index.scss";
+@import "product_show.scss";
+@import "user_auth.scss";
+@import "signup.scss";
+@import "review_form.scss";
+@import "splash.scss";
