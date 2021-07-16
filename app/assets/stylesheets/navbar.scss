@@ -351,3 +351,33 @@ hr {
   border: 0.01em solid lightgrey;
   border-top: 0;
 }
+
+
+
+.category-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #2f3e45;
+  height: 2em;
+  h2 {
+    color: white;
+    font-size: 0.8em;
+    letter-spacing: 0.05em;
+    padding: 0.5em;
+    border: 1px solid #2f3e45;
+    &:hover {
+      border: 1px solid white;
+      padding: 0.5em;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .category-navbar {
+    h2 {
+      font-size: 0.65em;
+    }
+  }
+}
