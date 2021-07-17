@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const CategoryNavbar = props => {
   return(
     <div className="category-navbar">
-      <Link onClick={() => props.fetchProducts('', 'Electronics')} to="/products?search=&category=Beauty%20and%20Skincare">
+      <Link onClick={() => props.fetchProducts('', 'Electronics')} to="/products?search=&category=Electronics%20">
         <h2>Electronics</h2>
       </Link>
       <Link onClick={() => props.fetchProducts('', 'Books & Moo-vies')} to="/products?search=&category=Books%20and%20Moo-vies">

@@ -9,11 +9,11 @@ const Flag = () => (
     <div className="language">
       <span>English - EN</span>
       <IoMdRadioButtonOn fill="gray" className="radio-button"/>
-    </div>
-    <div className="language">
+      <br />
       <span>Español - ES</span>
       <IoMdRadioButtonOff fill="gray" className="radio-button"/>
     </div>
+   
   </div>
 );
 

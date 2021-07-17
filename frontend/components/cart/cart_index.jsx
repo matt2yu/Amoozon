@@ -23,12 +23,12 @@ class CartIndex extends React.Component {
   };
 
   subtotal() {
-    let subtotal = this.props.cartItems.map(item => item.quantity * parseFloat(this.props.products[item.product_id].price));
+    let subtotal = this.props.cart_items.map(item => item.quantity * parseFloat(this.props.products[item.product_id].price));
     return subtotal.reduce((a,b) => a + b, 0).toFixed(2);
   };
 
   quantity() {
-    let quantity = this.props.cartItems.map(item => item.quantity);
+    let quantity = this.props.cart_items.map(item => item.quantity);
     return quantity.reduce((a,b) => a + b, 0);
   };
 
@@ -36,10 +36,11 @@ class CartIndex extends React.Component {
     return(
       <div className="empty-cart-page">
         <div className="empty-cart">
+          <img src={window.cartgif} alt="shopping cart" />
           <div className="empty-cart-text">
             <h1>Your Amoozon Cart is empty.</h1>
             <p>Your Shopping Cart lives to serve. Give it purpose — fill it with dairy, cowbells, grass, and more.</p><br />
-            <p>Continue shopping on the <Link className="link-to-home" to="/*">Amoozon.com homepage.</Link></p>
+            <p>Continue shopping on the <Link className="link-to-home" to="/">Amoozon.com homepage.</Link></p>
           </div>
         </div>
       </div>
@@ -48,15 +49,7 @@ class CartIndex extends React.Component {
 
   render() {
     if (this.state.loaded) {
-      let cartItems = this.props.cart_items.map((cartItem, i) => 
-      <CartIndexItem 
-        key={`cartItem-${i}`} 
-        cartItem={cartItem} 
-        product={this.props.products[cartItem.product_id]} 
-        fetchCart = {this.props.fetchCart} 
-        deleteCartItem={this.props.deleteCartItem} 
-        updateCartItem={this.props.updateCartItem}
-      />)
+      let cartItems = this.props.cart_items.map((cartItem, i) => <CartIndexItem key={`cartItem-${i}`} cart_item={cartItem} product={this.props.products[cart_item.product_id]} fetchCart = {this.props.fetchCart} deleteCartItem={this.props.deleteCartItem} updateCartItem={this.props.updateCartItem}/>)
       if (cartItems.length === 0) {
         return(this.emptyCart())
       } else {
@@ -66,15 +59,15 @@ class CartIndex extends React.Component {
               <h1>Shopping Cart</h1>
               <h3>Price</h3>
               { cartItems }
-              <h2 className="subtotal-cart">Subtotal ({this.quantity()} items): <span className="bold">${this.subtotal()}</span></h2>
+              <h2 className="subtotal-cart">Subtotal ({this.quantity()} {this.quantity() === 1 ? "item" : "items"}): <span className="bold">${this.subtotal()}</span></h2>
             </ul>
             <section className="cart-total">
-              <h2 className="subtotal-cart subtotal">Subtotal ({this.quantity()} items): <span className="bold">${this.subtotal()}</span></h2>
+              <h2 className="subtotal-cart subtotal">Subtotal ({this.quantity()} {this.quantity() === 1 ? "item" : "items"}): <span className="bold">${this.subtotal()}</span></h2>
               <div>
                 <input type="checkbox" />&nbsp;
                 <span>This order contains a gift</span>
               </div>
-              <button className="auth-button proceed-to-checkout" type="button">Proceed to checkout</button>
+              <button className="proceed-to-checkout" type="button">Proceed to checkout</button>
             </section>
           </div>
         )

@@ -6,9 +6,9 @@ class CartIndexItem extends React.Component {
     super(props);
     this.state = {
       id: this.props.cartItem.id,
-      user_id: this.props.cartItem.user_id,
+      user_id: this.props.cart_item.user_id,
       product_id: this.props.product.id,
-      quantity: this.props.cartItem.quantity
+      quantity: this.props.cart_item.quantity
     };
 
     this.updateQuantity = this.updateQuantity.bind(this);
@@ -25,7 +25,7 @@ class CartIndexItem extends React.Component {
   };
 
   remove(e) {
-    this.props.deleteCartItem(this.props.cartItem.id);
+    this.props.deleteCartItem(this.props.cart_item.id);
   };
 
   render() {

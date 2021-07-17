@@ -1,5 +1,5 @@
 class Api::ProductsController < ApplicationController
-  
+
   def index
     @products = []
     if search_params && category_params

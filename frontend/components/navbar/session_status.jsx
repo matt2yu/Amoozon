@@ -7,7 +7,7 @@ const Greeting = (props) => {
     <div className="greeting">
       <div className="greeting-text">
         <p className="nav-small">Hello, {props.currentUser.first_name}</p>
-        <h2 className="bold space-above">Account&nbsp; 
+        <h2 className="bold space-above">Account & Lists&nbsp; 
         <GoTriangleDown fill="gray" className="dropdown-arrow"/></h2>
       </div>
       <nav className="login-flyout">

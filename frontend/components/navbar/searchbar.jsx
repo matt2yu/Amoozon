@@ -29,15 +29,15 @@ class Searchbar extends React.Component {
     return(
         <form className="searchbar" onSubmit={this.handleSubmit}>
             <select className="search-menu category" id="category" onChange={this.handleInput("category")}>
-              <option value="">All</option>
-              <option value="Anime">Electronics</option>
-              <option value="Manga">Books & Moo-vies</option>
-              <option value="Manga">Food & Grocery</option>
-              <option value="Manga">Beauty & Health</option>
-              <option value="Manga">Games & Toys</option>
-              <option value="Manga">Fashion & Jewelry</option>
-              <option value="Manga">Home & Garden</option>
-              <option value="Manga">Sports & Outdoors</option>
+              <option className='searchvalue' value="">All</option>
+              <option className='searchvalue' value="Anime">Electronics</option>
+              <option className='searchvalue' value="Manga">Books & Moo-vies</option>
+              <option className='searchvalue' value="Manga">Food & Grocery</option>
+              <option className='searchvalue' value="Manga">Beauty & Health</option>
+              <option className='searchvalue' value="Manga">Games & Toys</option>
+              <option className='searchvalue' value="Manga">Fashion & Jewelry</option>
+              <option className='searchvalue' value="Manga">Home & Garden</option>
+              <option className='searchvalue' value="Manga">Sports & Outdoors</option>
 
             </select>
             <input className="search-input" type="text" value={this.state.search} onChange={this.handleInput("search")} />

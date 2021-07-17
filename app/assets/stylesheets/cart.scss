@@ -1,6 +1,6 @@
 .shopping-cart {
   background-color: #f4f4f4;
-  font-family: $default-font;
+  font-family: 'Ubuntu', Helvetica, sans-serif;
   display: flex;
   flex-direction: row;
   padding-bottom: 15em;
@@ -50,7 +50,7 @@
     width: 30em;
     .link-product-name {
       text-decoration: none;
-      color: $almost-black;
+      color: #131921;
     }
       h2 {
         font-size: 1.3em;
@@ -141,7 +141,7 @@
   background-color: #f4f4f4;
   padding-top: 1em;
   padding-bottom: 23em;
-  font-family: $default-font;
+  font-family: 'Ubuntu';
   
 }
 
@@ -153,9 +153,15 @@
   padding: 5em;
   border-radius: 1em;
   img {
-    width: 8em;
     height: auto;
     margin-right: 2em;
+    margin-top: 1em;
+    border:1px solid rgb(190, 165, 96);    
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    height:175px;
+    width:175px;
   }
 }
 
