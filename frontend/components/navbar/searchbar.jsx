@@ -1,4 +1,5 @@
 import React from 'react';
+import { AiOutlineSearch } from 'react-icons/ai';
 
 class Searchbar extends React.Component {
   constructor(props) {
@@ -29,11 +30,18 @@ class Searchbar extends React.Component {
         <form className="searchbar" onSubmit={this.handleSubmit}>
             <select className="search-menu category" id="category" onChange={this.handleInput("category")}>
               <option value="">All</option>
-              <option value="Anime">Anime</option>
-              <option value="Manga">Manga</option>
+              <option value="Anime">Electronics</option>
+              <option value="Manga">Books & Moo-vies</option>
+              <option value="Manga">Food & Grocery</option>
+              <option value="Manga">Beauty & Health</option>
+              <option value="Manga">Games & Toys</option>
+              <option value="Manga">Fashion & Jewelry</option>
+              <option value="Manga">Home & Garden</option>
+              <option value="Manga">Sports & Outdoors</option>
+
             </select>
-          <input className="search-input" type="text" value={this.state.search} onChange={this.handleInput("search")} />
-          <button type="submit" className="search-button">search_button</button>
+            <input className="search-input" type="text" value={this.state.search} onChange={this.handleInput("search")} />
+          <button type="submit" className="search-button"><AiOutlineSearch fill="#555555" /></button>
         </form>
     )
   }

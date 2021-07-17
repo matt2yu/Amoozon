@@ -7,13 +7,13 @@ const DeliverTo = (props) => {
   return(
     <div className="address-nav">
       <Link className="address" to='/login'>
-        <p className="nav-small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Deliver to {props.currentUser}</p>
-        <p className="bold"><AddressPin/>&nbsp;Austin 78712</p>
+        <p className="nav-small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Deliver to {props.currentUser.first_name}</p>
+        <p className="bold"><AddressPin/>&nbsp;Houston 12345</p>
       </Link>
         <div className="location">
           <p className="location-box">
             <GiTexas fill="black"/>
-            <span className="location-text">Austin, TX</span>
+            <span className="location-text">Houston, TX</span>
           </p>
         </div>
     </div>

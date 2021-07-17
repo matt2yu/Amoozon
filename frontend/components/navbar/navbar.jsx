@@ -2,7 +2,7 @@ import React from 'react';
 import SearchbarContainer from './searchbar_container'
 import SessionStatusContainer from './session_status_container';
 import CartContainer from './cart_container';
-import DeliverTo from './deliver_to';
+import DeliverToContainer from './deliver_to_container';
 import Flag from './flag';
 import Returns from './returns';
 import CategoryNavbarContainer from './category_navbar_container';
@@ -13,10 +13,10 @@ const Navbar = () => {
     <div>
       <nav className="navbar">
         <DarkLogo />
+        <DeliverToContainer />
         <SearchbarContainer/>
-        <SessionStatusContainer />
-        <DeliverTo />
         <Flag />
+        <SessionStatusContainer />
         <Returns />
         <CartContainer />
       </nav>

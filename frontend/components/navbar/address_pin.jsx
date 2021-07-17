@@ -3,7 +3,7 @@ import React from 'react';
 export const AddressPin = () => (
   <svg 
     stroke="currentColor" 
-    fill="pink" 
+    fill="white" 
     strokeWidth="0" 
     viewBox="0 0 24 24" 
     className="location-pin" 
@@ -12,7 +12,7 @@ export const AddressPin = () => (
     xmlns="http://www.w3.org/2000/svg">
     <path 
       fill="none" 
-      stroke="pink" 
+      stroke="white" 
       strokeWidth="2" 
       d="M12,22 C12,22 4,16 4,10 C4,5 8,2 12,2 C16,2 20,5 20,10 C20,16 12,22 12,
       22 Z M12,13 C13.657,13 15,11.657 15,10 C15,8.343 13.657,7 12,7 C10.343,7 9,

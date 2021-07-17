@@ -1,16 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { GoTriangleDown } from 'react-icons/go';
 
-const SessionStatus = (props) => {
+const Greeting = (props) => {
   const loggedIn = () => (
     <div className="greeting">
-      <Link className="greeting-text" to="/">
-        <p className="nav-small">Hello, {props.currentUser.firstName}</p>
-        <h2 className="bold space-above">Account&nbsp;</h2>
-      </Link>
+      <div className="greeting-text">
+        <p className="nav-small">Hello, {props.currentUser.first_name}</p>
+        <h2 className="bold space-above">Account&nbsp; 
+        <GoTriangleDown fill="gray" className="dropdown-arrow"/></h2>
+      </div>
       <nav className="login-flyout">
         <h2>Your Account</h2>
         <ul>
+          <li>{<Link to="/cart">Cart</Link>}</li>
           <li>{<Link onClick={props.logout} to="/">Sign Out</Link>}</li>
         </ul>
       </nav>
@@ -19,10 +22,11 @@ const SessionStatus = (props) => {
 
   const loggedOut = () => (
     <div className="greeting">
-      <Link className="greeting-text" to="/login">
+      <div className="greeting-text">
         <p className="nav-small">Hello, Sign In</p>
-        <h2 className="bold space-above">Customer&nbsp;</h2>
-      </Link>
+        <h2 className="bold space-above">Account&nbsp;
+        <GoTriangleDown fill="gray" className="dropdown-arrow"/></h2>
+      </div>
       <nav className="login-flyout">
         <Link to="/login" className="login-button">Sign in</Link>
         <div id="small-msg">
@@ -35,4 +39,4 @@ const SessionStatus = (props) => {
   return props.currentUser ? loggedIn() : loggedOut()
 };
 
-export default SessionStatus;
+export default Greeting;
