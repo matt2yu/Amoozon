@@ -20,6 +20,7 @@ ApplicationRecord.transaction do
 
 
   electronics = "Electronics"
+
   electronics1 = Product.create!(name: "Flat Screen TV", description: "Moosung TV currently on sale at a bargain. Take advantage of the peak season and purchase this 50-Inch Class QLED Q60A Series - 4K UHD Dual LED Quantum HDR Smart TV with Cowbell Built-in ", category: electronics, price: 679.99, keywords: ["samsung", "tv", "television", "QLED", "HD", "TV", "50", 
     "50in", "smart", "4K", "4k"])
   electronics1.photo.attach(io: open("https://amoozon-seeds.s3.us-west-1.amazonaws.com/samsung50.jpg"), filename: "samsung50.jpg")
@@ -27,22 +28,40 @@ ApplicationRecord.transaction do
   electronics_review2 = Review.create!(user_id: demo_user10.id, product_id: electronics1.id, rating: 5, title: "Best TV I Have Ever Owned, Incredible Picture Quality!!", body: "All TV's are setup at the factory and are set at neutral settings across the board throughout the TV's range. You MUST know how to properly adjust each individual setting to optimize the picture quality!!")
   electronics_review3 = Review.create!(user_id: demo_user2.id, product_id: electronics1.id, rating: 3, title: "Dead on arrival", body: "Total brick right out of the box. There was no visible damage or signs of mishandling. The unit was completely dead ... no power getting to it at all, no standby light, nothing. I called the Samsung help line, where I was advised to box it up and send it back to Amazon. Refund still pending. Total waste of time and effort.")
 
-
-
   electronics2 = Product.create!(name: "Amoozon Fire", description: "this is a test description", category: electronics, price: 420.00, keywords: ["anime", "manga"])
   electronics2.photo.attach(io: open("https://amoozon-seeds.s3.us-west-1.amazonaws.com/amoozonfire.jpg"), filename: "amoozonfire.jpg")
 
-  # fandg = "Food & Grocery"
+
+  booksAndMovies = "Books & Moo-vies"
+  bandm1 = Product.create!(name: "Manga book 1", description: "this is a test description", category: booksAndMovies, price: 123.45, keywords: ["anime", "manga", "book", "movie"])
+  bandm2 = Product.create!(name: "Manga book 2", description: "this is a test description", category: booksAndMovies, price: 11.11, keywords: ["anime", "manga", "book", "movie"])
+
+  foodAndGrocery = "Food & Grocery"
   # manga1 = Product.create!(name: "Manga book 1", description: "this is a test description", category: manga, price: 123.45, keywords: ["anime", "manga"])
   # manga_review1 = Review.create!(user_id: demo_user.id, product_id: manga1.id, rating: 5, title: "Review 3", body: "MOooooooooooooooooo!!")
   # manga2 = Product.create!(name: "Manga book 2", description: "this is a test description", category: manga, price: 11.11, keywords: ["anime", "manga"])
 
-  # fandg = "Books and Movies"
+  beautyAndHealth = "Beauty & Health"
   # manga1 = Product.create!(name: "Manga book 1", description: "this is a test description", category: manga, price: 123.45, keywords: ["anime", "manga"])
   # manga_review1 = Review.create!(user_id: demo_user.id, product_id: manga1.id, rating: 5, title: "Review 3", body: "MOooooooooooooooooo!!")
   # manga2 = Product.create!(name: "Manga book 2", description: "this is a test description", category: manga, price: 11.11, keywords: ["anime", "manga"])
 
-  # fandg = "Sports and Outdoors"
+  gamesAndToys = "Games & Toys"
+  # manga1 = Product.create!(name: "Manga book 1", description: "this is a test description", category: manga, price: 123.45, keywords: ["anime", "manga"])
+  # manga_review1 = Review.create!(user_id: demo_user.id, product_id: manga1.id, rating: 5, title: "Review 3", body: "MOooooooooooooooooo!!")
+  # manga2 = Product.create!(name: "Manga book 2", description: "this is a test description", category: manga, price: 11.11, keywords: ["anime", "manga"])
+
+  fashionAndJewelery = "Fashion & Jewelery"
+  # manga1 = Product.create!(name: "Manga book 1", description: "this is a test description", category: manga, price: 123.45, keywords: ["anime", "manga"])
+  # manga_review1 = Review.create!(user_id: demo_user.id, product_id: manga1.id, rating: 5, title: "Review 3", body: "MOooooooooooooooooo!!")
+  # manga2 = Product.create!(name: "Manga book 2", description: "this is a test description", category: manga, price: 11.11, keywords: ["anime", "manga"])
+
+  homeAndGarden = "Home & Garden"
+  # manga1 = Product.create!(name: "Manga book 1", description: "this is a test description", category: manga, price: 123.45, keywords: ["anime", "manga"])
+  # manga_review1 = Review.create!(user_id: demo_user.id, product_id: manga1.id, rating: 5, title: "Review 3", body: "MOooooooooooooooooo!!")
+  # manga2 = Product.create!(name: "Manga book 2", description: "this is a test description", category: manga, price: 11.11, keywords: ["anime", "manga"])
+  
+  sportsAndOutdoors = "Sports & Outdoors"
   # manga1 = Product.create!(name: "Manga book 1", description: "this is a test description", category: manga, price: 123.45, keywords: ["anime", "manga"])
   # manga_review1 = Review.create!(user_id: demo_user.id, product_id: manga1.id, rating: 5, title: "Review 3", body: "MOooooooooooooooooo!!")
   # manga2 = Product.create!(name: "Manga book 2", description: "this is a test description", category: manga, price: 11.11, keywords: ["anime", "manga"])
