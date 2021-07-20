@@ -39,7 +39,7 @@ const ProductIndexItem = props => {
         <h2 className="price">${parseFloat(props.product.price).toFixed(2)}</h2>
 
         <p className="shipping-info">
-          {/* <img id="time-logo" src={window.time} alt="time logo" /> */}
+          <img id="time-logo" src={window.primeMoo} alt="time logo" />
           Get it as soon as <span className="bold">{`${fastDay}, ${fastMonth} ${fastDate}`}</span>
           <br></br>
           FREE moooo shipping by Amoozon
