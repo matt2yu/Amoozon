@@ -7,6 +7,7 @@ import Navbar from './navbar/navbar';
 import ReviewFormContainer from './review/review_form_container';
 import { ProtectedRoute } from '../util/route_util';
 import CartIndexContainer from './cart/cart_index_container';
+import Footer from './navbar/footer';
 
 
 class Amoozon extends React.Component {
@@ -25,6 +26,7 @@ class Amoozon extends React.Component {
         <Route exact path="/products"><ProductIndexContainer /></Route>
         <Route path="/*"><SplashContainer /></Route>
       </Switch>
+      <Footer />
     </div>
   )
   }

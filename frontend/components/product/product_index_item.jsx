@@ -12,7 +12,7 @@ const ProductIndexItem = props => {
   return(
     <li className="product-index-item">
       <Link className="product-item" to={`/products/${props.product.id}`}>
-      <img src={props.product.imageUrl} alt={props.product.name} width="100px" height="100px"/>
+      <img src={props.product.imageUrl} alt={props.product.name} width="100px" height="auto"/>
         <h2>{props.product.name}</h2>
       </Link>
 

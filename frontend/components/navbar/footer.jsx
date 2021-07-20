@@ -11,12 +11,12 @@ const Footer = () => {
         <Link to="/cart">Cart</Link>
       </div>
       <div className="footer-started">
-        <h3>GET STARTED</h3>
+        <h3>Getting Started</h3>
         <Link to="/login">Login</Link>
         <Link to="/signup">Sign Up</Link>
       </div>
       <div className="footer-follow">
-        <h3>FOLLOW</h3>
+        <h3>Matthew Yu</h3>
           <a
             href="https://github.com/matt2yu"
             rel="noopener noreferrer"

@@ -2,7 +2,7 @@
   z-index: -1;
   position: absolute;
   background-color: #f2f2f2;
-  top: 90px;
+  top: 2em;
   &::before {
     background-image: linear-gradient( top, 
             rgba( 255, 255, 255, 0 ) 30%, 
@@ -30,9 +30,10 @@
 .back-to-top {
   display: block;
   position: absolute;
-  top: 110%;
+  left: 0;
+  bottom: -7vh;
   padding: 1.2em;
-  background-color: #37515c;
+  background-color: #2f3e45;
   text-align: center;
   text-decoration: none;
   color: white;
@@ -87,7 +88,7 @@
   }
 }
 
-.spinner {
+.loading {
   margin: 100px auto;
   font-size: 25px;
   width: 1em;
