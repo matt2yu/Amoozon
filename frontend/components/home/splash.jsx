@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Footer from '../navbar/footer';
 
 const Splash = props => {
   return(
@@ -50,6 +51,8 @@ const Splash = props => {
       </Link>
 
       <a className="back-to-top" href="#">Back to top</a>
+
+      <Footer />
     </section>
   </div>
 )

@@ -1,14 +1,14 @@
 .footer {
   display: flex;
   justify-content: space-evenly;
-  position: relative;
-  margin-top: 18em;
+  position: absolute;
+  bottom: -28vh;
   background-color: #131921;
   text-align: center;
   text-decoration: none;
   color: white;
   font-size: 1em;
-  font-family: 'Ubuntu', Helvetica;
+  font-family: 'Ubuntu';
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   h3 {
