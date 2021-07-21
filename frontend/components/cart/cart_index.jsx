@@ -23,7 +23,7 @@ class CartIndex extends React.Component {
   };
 
   subtotal() {
-    let subtotal = this.props.cart_items.map(item => item.quantity * parseFloat(this.props.products[item.productId].price));
+    let subtotal = this.props.cart_items.map(item => item.quantity * parseFloat(this.props.products[item.product_id].price));
     return subtotal.reduce((a,b) => a + b, 0).toFixed(2);
   };
 
@@ -49,7 +49,7 @@ class CartIndex extends React.Component {
 
   render() {
     if (this.state.loaded) {
-      let cartItems = this.props.cart_items.map((cartItem, i) => <CartIndexItem key={`cartItem-${i}`} cart_item={cartItem} product={this.props.products[cart_item.productId]} fetchCart = {this.props.fetchCart} deleteCartItem={this.props.deleteCartItem} updateCartItem={this.props.updateCartItem}/>)
+      let cartItems = this.props.cart_items.map((cartItem, i) => <CartIndexItem key={`cartItem-${i}`} cart_item={cartItem} product={this.props.products[cartItem.product_id]} fetchCart = {this.props.fetchCart} deleteCartItem={this.props.deleteCartItem} updateCartItem={this.props.updateCartItem}/>)
       if (cartItems.length === 0) {
         return(this.emptyCart())
       } else {

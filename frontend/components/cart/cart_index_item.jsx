@@ -5,7 +5,7 @@ class CartIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: this.props.cartItem.id,
+      id: this.props.cart_item.id,
       user_id: this.props.cart_item.user_id,
       product_id: this.props.product.id,
       quantity: this.props.cart_item.quantity
@@ -30,6 +30,7 @@ class CartIndexItem extends React.Component {
 
   render() {
     const { product } = this.props;
+    console.log(this.props.cart_item);
     return(
       <li className="cart-item">
         <Link to={`/products/${this.props.product.id}`}>
