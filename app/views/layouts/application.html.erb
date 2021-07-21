@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Amoozon</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
      <meta property="og:title" content="Amoozon" />
      <meta property="og:image" content="<%= image_url('coverphoto.png') %>"/>
      <meta property="og:description"
@@ -10,13 +15,6 @@
        content="http://amoozon.herokuapp.com/#/"
      />
 
-    <title>Amoozon</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   </head>
 
@@ -35,10 +33,6 @@
   <script>window.fashionAndJewlery = "<%= image_url("fashionAndJewlery.jpeg") %>"</script>
   <script>window.homeAndGarden = "<%= image_url("homeAndGarden.jpeg") %>"</script>
   <script>window.sportsAndOutdoors = "<%= image_url("sportsAndOutdoors.jpeg") %>"</script>
-
-
-
-
 
   <body>
     <%= yield %>
