@@ -37,7 +37,7 @@ ApplicationRecord.transaction do
   bandm2 = Product.create!(name: "Manga book 2", description: "this is a test description", category: booksAndMovies, price: 11.11, keywords: ["anime", "manga", "book", "movie"])
 
   foodAndGrocery = "Food & Grocery"
-  # manga1 = Product.create!(name: "Manga book 1", description: "this is a test description", category: manga, price: 123.45, keywords: ["anime", "manga"])
+  # foodAndGrocery1 = Product.create!(name: "Manga book 1", description: "this is a test description", category: manga, price: 123.45, keywords: ["anime", "manga"])
   # manga_review1 = Review.create!(user_id: demo_user.id, product_id: manga1.id, rating: 5, title: "Review 3", body: "MOooooooooooooooooo!!")
   # manga2 = Product.create!(name: "Manga book 2", description: "this is a test description", category: manga, price: 11.11, keywords: ["anime", "manga"])
 
