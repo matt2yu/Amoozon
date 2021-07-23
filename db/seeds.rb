@@ -28,7 +28,7 @@ ApplicationRecord.transaction do
   electronics_review2 = Review.create!(user_id: demo_user10.id, product_id: electronics1.id, rating: 5, title: "Best TV I Have Ever Owned, Incredible Picture Quality!!", body: "All TV's are setup at the factory and are set at neutral settings across the board throughout the TV's range. You MUST know how to properly adjust each individual setting to optimize the picture quality!!")
   electronics_review3 = Review.create!(user_id: demo_user2.id, product_id: electronics1.id, rating: 3, title: "Dead on arrival", body: "Total brick right out of the box. There was no visible damage or signs of mishandling. The unit was completely dead ... no power getting to it at all, no standby light, nothing. I called the Samsung help line, where I was advised to box it up and send it back to Amazon. Refund still pending. Total waste of time and effort.")
 
-  electronics2 = Product.create!(name: "Amoozon Fire", description: "this is a test description", category: electronics, price: 420.00, keywords: ["anime", "manga"])
+  electronics2 = Product.create!(name: "Amoozon Fire", description: "this is a test description", category: electronics, price: 79.99, keywords: ["Amoozon", "amoozon", "fire", "Fire", "tablet", "tab"])
   electronics2.photo.attach(io: open("https://amoozon-seeds.s3.us-west-1.amazonaws.com/amoozonfire.jpg"), filename: "amoozonfire.jpg")
 
 
